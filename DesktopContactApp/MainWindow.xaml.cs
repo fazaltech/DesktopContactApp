@@ -44,7 +44,11 @@ namespace DesktopContactApp
 			using (SQLiteConnection conn = new SQLiteConnection(App.databasePath))
 			{
 				conn.CreateTable<Contact>();
-				contacts=conn.Table<Contact>().ToList();
+				contacts=(conn.Table<Contact>().ToList()).OrderBy(c=>c.Name).ToList();
+
+				//var variable =from c2 in contacts
+				//			  orderby c2.Name
+				//			  select c2;
 			}
 			if (contacts != null) 
 			{
@@ -58,7 +62,12 @@ namespace DesktopContactApp
 
 			var filterList = contacts.Where(c => c.Name.ToLower().Contains(searchTextBox.Text.ToLower())).ToList();
 
-			contactsListView.ItemsSource=filterList;
+			var filterList2=(from c2 in contacts
+							where c2.Name.ToLower().Contains(searchTextBox.Text.ToLower())
+							orderby c2.Email
+							select c2).ToList();
+
+			contactsListView.ItemsSource= filterList2;
         }
     }
 }
