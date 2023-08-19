@@ -4,12 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DesktopContactApp"
+         WindowStyle="None"
+        ResizeMode="NoResize"
         mc:Ignorable="d"
           Title="NewContactWindow" Height="300" Width="300">
     <Grid>
         <StackPanel Margin="10">
+            <TextBlock Text="Name"/>
             <TextBox x:Name="nameTextBox" Margin="0,0,0,5"/>
+            <TextBlock Text="Email"/>
             <TextBox x:Name="emailTextBox" Margin="0,0,0,5"/>
+            <TextBlock Text="Phone"/>
             <TextBox x:Name="phoneTextBox" Margin="0,0,0,5"/>
             <Button Content="Update" x:Name="updateButton" Click="updateButton_Click" Margin="0,0,0,5"/>
             <Button Content="Delete" x:Name="deleteButton" Click="deleteButton_Click" Margin="0,0,0,5" Background="Red" Foreground="White"/>

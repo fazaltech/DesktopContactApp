@@ -26,7 +26,11 @@ namespace DesktopContactApp
 		public ContactDetailWindow(Contact contact)
         {
             InitializeComponent();
-            this.contact = contact;
+
+			Owner = Application.Current.MainWindow;
+			WindowStartupLocation = WindowStartupLocation.CenterOwner;
+
+			this.contact = contact;
 			nameTextBox.Text = contact.Name;
 			phoneTextBox.Text = contact.Phone;
 			emailTextBox.Text = contact.Email;

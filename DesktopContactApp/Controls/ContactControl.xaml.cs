@@ -21,19 +21,7 @@ namespace DesktopContactApp.Controls
     /// </summary>
     public partial class ContactControl : UserControl
     {
-        //      private Contact contact;
-
-        //      public Contact Contact
-        //{
-        //          get { return contact; }
-        //          set { 
-        //              contact = value;
-        //              nameTextBlock.Text = contact.Name;
-        //		emailTextBlock.Text = contact.Email;
-        //		phoneTextBlock.Text=contact.Phone;
-        //	}
-        //      }
-
+       
 
 
         public Contact Contact
